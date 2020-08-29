@@ -21,6 +21,10 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+  username: root # 設定したPostgreSQL Accountと同一のもの
+  password: root # 設定したPostgreSQL Accountと同一のもの
+  host: 127.0.0.1
+
 development:
   <<: *default
   database: wonderful_editor_development
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: wonderful_editor_production
-  username: wonderful_editor
+  # username: wonderful_editor
   password: <%= ENV['WONDERFUL_EDITOR_DATABASE_PASSWORD'] %>
