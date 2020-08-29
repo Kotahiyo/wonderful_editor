@@ -185,7 +185,6 @@ Style/AndOr:
 # 日本語のコメントを許可する
 Style/AsciiComments:
   Enabled: false
-
 # do .. end から更にメソッドチェーンすると見づらいので
 # auto-correct せず、自分で修正する
 # spec 内は見た目が綺麗になるので許可
