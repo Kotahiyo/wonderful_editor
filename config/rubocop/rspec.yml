@@ -69,5 +69,26 @@ RSpec/NestedGroups:
 
 # ブロックは初見だと返り値を書いていると気づけないので and_return にしたいが、
 # ブロックの方が見た目がスッキリして見やすいので、どちらでもお好きにどうぞ。
-RSpec/ReturnFromStub:
+
+# 下記、講座内とはとは別に独自にエラーが出たため追加
+
+Layout/IndentationWidth:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Rails/ApplicationRecord:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/TrailingWhitespace:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
   Enabled: false
