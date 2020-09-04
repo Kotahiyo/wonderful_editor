@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    body { "MyText" }
-    user { nil }
+    title { Faker::Lorem.characters(number: 20) }
+    body { Faker::Lorem.sentence }
+    user
   end
 end
