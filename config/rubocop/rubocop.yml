@@ -420,3 +420,12 @@ Style/HashTransformKeys:
 # version 1 からは強制 true
 Style/HashTransformValues:
   Enabled: true
+
+Style/CommentedKeyword:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: false
+
+Layout/SpaceInsideParens:
+  Enabled: false
