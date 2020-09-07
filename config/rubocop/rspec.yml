@@ -95,3 +95,6 @@ RSpec/EmptyExampleGroup:
 
 RSpec/EmptyLineAfterSubject:
   Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
