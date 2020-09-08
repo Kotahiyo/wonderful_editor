@@ -98,3 +98,6 @@ RSpec/EmptyLineAfterSubject:
 
 RSpec/ExampleLength:
   Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
