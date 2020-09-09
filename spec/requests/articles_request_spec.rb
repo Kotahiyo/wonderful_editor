@@ -110,8 +110,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     context "他人の所持する記事を削除しようとするとき" do
       let!(:article) { create(:article, user: other_user) }
       let(:other_user) { create(:user) }
-      fit "任意のユーザーの記事が削除できない" do
-        # binding.pry
+      it "任意のユーザーの記事が削除できない" do
         expect { subject }.to raise_error(ActiveRecord::RecordNotFound) &
                               change { Article.count }.by(0)
       end
