@@ -53,10 +53,10 @@ RSpec.describe "Api::V1::Auth::Sessions", type: :request do
   describe "DELETE /v1/auth/sign_out" do
     subject { delete(destroy_api_v1_user_session_path, headers: headers) }
     context "ログアウトに必要な処理を送信した場合" do
-      let(:headers) { user.create_new_auth_token }
+      let!(:headers) { user.create_new_auth_token }
       let(:user) { create(:user) }
       it "ログアウトする" do
-        expect { subject }.change { user.reload.tokens }.from(be_present).to(be_blank)
+        expect { subject }.to change { user.reload.tokens }.from(be_present).to(be_blank)
         expect(response).to have_http_status(:ok)
       end
     end
