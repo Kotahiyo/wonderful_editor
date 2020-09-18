@@ -19,12 +19,11 @@ RSpec.describe Article, type: :model do
 
   context "status が公開状態のとき" do
     let(:article) { build(:article, :published) }
-    fit "公開状態の記事で作成できる" do
+    it "公開状態の記事で作成できる" do
       expect(article).to be_valid
       expect(article.status).to eq "published"
     end
   end
-
 
   context "title が45文字以上の時" do
     it "記事が作成されない" do
