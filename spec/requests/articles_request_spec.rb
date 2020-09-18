@@ -6,6 +6,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let!(:article_1) { create(:article, updated_at: 1.days.ago) }
     let!(:article_2) { create(:article, updated_at: 2.days.ago) }
     let!(:article_3) { create(:article) }
+    let!(:article_4) { create(:article) }
 
     it "記事一覧が取得できる" do
       subject
