@@ -1,13 +1,17 @@
 module Api::V1
   class ArticlesController < BaseApiController # base_api_controller を継承
     before_action :authenticate_user!, only: [:create, :update, :destroy]
+
     def index
-      articles = Article.order(updated_at: :desc)
+      articles = Article.published.order(updated_at: :desc)
       render json: articles, each_serializer: Api::V1::ArticlePreviewSerializer
     end
 
+    # 公開されている記事だけ取得できるようにする
+    # 記事を作成する場合は、記事の公開/非公開を選択できるようにする
+
     def show
-      article = Article.find(params[:id])
+      article = Article.published.find(params[:id])
       render json: article
     end
 
@@ -31,7 +35,7 @@ module Api::V1
     private
 
       def article_params
-        params.require(:article).permit(:title, :body)
+        params.require(:article).permit(:title, :body, :status)
       end
   end
 end
