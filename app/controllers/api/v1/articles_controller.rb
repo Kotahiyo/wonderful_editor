@@ -7,9 +7,6 @@ module Api::V1
       render json: articles, each_serializer: Api::V1::ArticlePreviewSerializer
     end
 
-    # 公開されている記事だけ取得できるようにする
-    # 記事を作成する場合は、記事の公開/非公開を選択できるようにする
-
     def show
       article = Article.published.find(params[:id])
       render json: article
