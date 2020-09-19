@@ -11,5 +11,10 @@ FactoryBot.define do
     trait :published do
       status { :published }
     end
+
+    factory :draft do
+      title { Faker::Lorem.characters(number: 20) }
+      body { Faker::Lorem.sentence }
+    end
   end
 end
